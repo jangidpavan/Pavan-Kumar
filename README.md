@@ -52,7 +52,7 @@ uvicorn api.main:app --reload
 
 ## API Documentation
 
-After starting the server, open
+After starting the server, open:
 
 ```
 http://127.0.0.1:8000/docs
@@ -62,7 +62,7 @@ http://127.0.0.1:8000/docs
 
 ## Authentication
 
-All endpoints require the API key:
+All endpoints require the following API key:
 
 ```
 candidate-test-2026
@@ -78,41 +78,29 @@ x-api-key: candidate-test-2026
 
 ## Available Endpoints
 
-GET /
-
-GET /customers
-
-GET /orders
-
-GET /order_items
-
-GET /payments
-
-GET /products
-
-GET /sellers
-
-GET /reviews
-
-GET /geolocation
-
-GET /category_translation
-
-GET /orders/{order_id}/details
+- GET /
+- GET /customers
+- GET /orders
+- GET /order_items
+- GET /payments
+- GET /products
+- GET /sellers
+- GET /reviews
+- GET /geolocation
+- GET /category_translation
+- GET /orders/{order_id}/details
 
 ---
 
-## Candidate Task
+## Candidate Assignment
 
-Candidates are expected to:
+The complete assessment instructions are available in:
 
-- Understand the existing project
-- Work with SQLite
-- Write SQL queries
-- Extend the API with new endpoints
-- Build analytical endpoints
-- Follow clean coding practices
-- Document their work
+**CANDIDATE_TASK.md**
+
+Submission requirements are available in:
+
+**SUBMISSION_GUIDELINES.md**
 
 ---
 
