@@ -6,18 +6,42 @@ A FastAPI-based analytics project built using the Olist Brazilian E-Commerce dat
 
 ```text
 project-root/
-├── app/
+├── api
+│   ├── _pycache_
+│   │   └── main.cpython-311.pyc
 │   └── main.py
-├── scripts/
-│   ├── load_data.py
-│   └── export_for_powerbi.py
-├── dashboard/
-│   └── olist_dashboard.pbix
-├── powerbi_data/
-├── data/
+├── data
+│   ├── olist_customers_dataset.csv
+│   ├── olist_geolocation_dataset.csv
+│   ├── olist_order_items_dataset.csv
+│   ├── olist_order_payments_dataset.csv
+│   ├── olist_order_reviews_dataset.csv
+│   ├── olist_orders_dataset.csv
+│   ├── olist_products_dataset.csv
+│   ├── olist_sellers_dataset.csv
+│   └── product_category_name_translation.csv
 ├── olist.db
+├── powerbi_data
+│   ├── category_translation.csv
+│   ├── customers.csv
+│   ├── geolocation.csv
+│   ├── order_items.csv
+│   ├── orders.csv
+│   ├── payments.csv
+│   ├── products.csv
+│   ├── reviews.csv
+│   └── sellers.csv
 ├── requirements.txt
-└── README.md
+└── scripts
+    ├── export_for_powerbi.py
+    └── load_data.py
+├── CANDIDATE_TASK.md
+├── Power-BI-Dashboard
+│   ├── Power-BI-dashboard-1.png
+│   ├── Power-BI-dashboard-2.png
+│   └── olist_dashboard.pbix
+├── README.md
+├── SUBMISSION_GUIDELINES.md
 ```
 
 ## Setup
