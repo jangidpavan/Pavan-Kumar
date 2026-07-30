@@ -139,6 +139,10 @@ The Power BI dashboard includes:
 - Top Customers
 - Delivery Performance
 
+Power BI Dashboard
+The Power BI dashboard screenshots are available in the Power-BI-Dashboard/ folder.
+The Power BI report file is available as olist_dashboard.pbix in the same folder.
+
 ## Tech Stack
 
 - FastAPI
