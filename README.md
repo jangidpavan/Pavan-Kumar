@@ -114,7 +114,7 @@ python scripts/export_for_powerbi.py
 All endpoints except `/` require the following header:
 
 ```
-X-API-Key: <your-api-key>
+X-API-Key: candidate-test-2026
 ```
 
 ## API Endpoints
