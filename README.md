@@ -1,112 +1,153 @@
-# Olist Interview API
+# Olist E-Commerce Analytics
 
-## Overview
+A FastAPI-based analytics project built using the Olist Brazilian E-Commerce dataset. The project includes a SQLite database, REST APIs, SQL analytics, and a Power BI dashboard.
 
-This project contains a REST API built using FastAPI and the Olist E-commerce dataset.
+## Project Structure
 
-The purpose of this repository is to be used as a technical assessment for Data Analyst candidates.
-
----
-
-## Dataset
-
-The CSV datasets are available inside the `data/` folder.
-
----
-
-## Installation
-
-Clone the repository
-
-```bash
-git clone https://github.com/sambhatnagar4/olist-interview-api.git
+```text
+project-root/
+├── app/
+│   └── main.py
+├── scripts/
+│   ├── load_data.py
+│   └── export_for_powerbi.py
+├── dashboard/
+│   └── olist_dashboard.pbix
+├── powerbi_data/
+├── data/
+├── olist.db
+├── requirements.txt
+└── README.md
 ```
 
-Install dependencies
+## Setup
+
+### Prerequisites
+
+- Install **Python 3.11** or later.
+- Verify the installation:
+
+```bash
+python3.11 --version
+```
+
+### Installation
+
+1. Clone the repository. - https://github.com/jangidpavan/Pavan-Kumar.git
+
+2. Create a virtual environment.
+
+```bash
+python3.11 -m venv .venv
+```
+
+3. Activate the virtual environment.
+
+```bash
+source .venv/bin/activate
+```
+
+> **Windows**
+>
+> ```bash
+> .venv\Scripts\activate
+> ```
+
+4. Install the required dependencies.
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
+5. Download the Olist dataset from Kaggle and place all CSV files inside the `data/` directory.
 
-## Load Database
-
-Run
+6. Create the SQLite database.
 
 ```bash
 python scripts/load_data.py
 ```
 
-This will create the SQLite database (`olist.db`).
-
----
-
-## Start the API
+7. Run the FastAPI application.
 
 ```bash
 uvicorn api.main:app --reload
 ```
 
----
-
-## API Documentation
-
-After starting the server, open:
+API Documentation:
 
 ```
 http://127.0.0.1:8000/docs
 ```
 
----
+8. Export data for Power BI (optional).
+
+```bash
+python scripts/export_for_powerbi.py
+```
 
 ## Authentication
 
-All endpoints require the following API key:
+All endpoints except `/` require the following header:
 
 ```
-candidate-test-2026
+X-API-Key: <your-api-key>
 ```
 
-Pass it in the request header:
+## API Endpoints
 
-```
-x-api-key: candidate-test-2026
-```
+### Resources
 
----
+- `/customers`
+- `/orders`
+- `/order_items`
+- `/payments`
+- `/products`
+- `/sellers`
+- `/reviews`
+- `/geolocation`
+- `/categories`
+- `/categories/translation`
 
-## Available Endpoints
+### Analytics
 
-- GET /
-- GET /customers
-- GET /orders
-- GET /order_items
-- GET /payments
-- GET /products
-- GET /sellers
-- GET /reviews
-- GET /geolocation
-- GET /category_translation
-- GET /orders/{order_id}/details
+- Top Selling Products
+- Top Revenue Products
+- Monthly Revenue
+- Revenue by State
+- Revenue by Category
+- Average Order Value
+- Average Basket Size
+- Average Delivery Time
+- Late Deliveries
+- Top Customers
+- Repeat Customers
+- Payment Methods
+- Cancellation Rate
+- Monthly Order Growth
+- Yearly Revenue Growth
 
----
+## Dashboard
 
-## Candidate Assignment
+The Power BI dashboard includes:
 
-The complete assessment instructions are available in:
+- Revenue KPIs
+- Monthly Revenue Trend
+- Revenue by State
+- Revenue by Category
+- Payment Analysis
+- Top Products
+- Top Customers
+- Delivery Performance
 
-**CANDIDATE_TASK.md**
+## Tech Stack
 
-Submission requirements are available in:
-
-**SUBMISSION_GUIDELINES.md**
-
----
-
-## Technologies Used
-
-- Python
 - FastAPI
 - SQLite
 - Pandas
+- Power BI
+
+## Notes
+
+- Uses the Olist Brazilian E-Commerce dataset.
+- Revenue is calculated from `order_items.price`.
+- SQLite is used for simplicity and local development.
